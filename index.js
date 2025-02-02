@@ -1,6 +1,8 @@
 import express from "express";
 import handlebars from "express-handlebars";
 
+import movies from "./movies.js";
+
 const app = express();
 
 app.engine(
@@ -13,7 +15,19 @@ app.engine(
 app.set("view engine", "hbs");
 
 app.get("/", (req, res) => {
-  res.render("homeView");
+  res.render("homeView", { movies });
+});
+
+app.get("/create", (req, res) => {
+  res.render("createView");
+});
+
+app.get("/search", (req, res) => {
+  res.render("searchView");
+});
+
+app.get("/about", (req, res) => {
+  res.render("aboutView");
 });
 
 app.listen(2000, () =>
