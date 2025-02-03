@@ -1,11 +1,11 @@
 import express from "express";
 import handlebars from "express-handlebars";
 
-import movies from "../movies.js";
+// import movies from "../movies.js";
 
 const app = express();
 
-app.use(express.static("public"));
+app.use(express.static("src/public"));
 
 app.engine(
   "hbs",
