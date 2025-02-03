@@ -6,7 +6,7 @@ export default [
     genre: "Drama",
     director: "Quentin Tarantino",
     year: 1994,
-    imageURL: "https://m.media-amazon.com/images/I/71c05lTE03L._AC_SY679_.jpg",
+    imageURL: "/img/jungle-cruise.jpeg",
     rating: 8.9,
     description:
       "The lives of two hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",

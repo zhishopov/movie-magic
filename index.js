@@ -5,7 +5,7 @@ import movies from "./movies.js";
 
 const app = express();
 
-// app.use(express.static("static"));
+app.use(express.static("static"));
 
 app.engine(
   "hbs",
