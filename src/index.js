@@ -15,21 +15,10 @@ app.engine(
 );
 
 app.set("view engine", "hbs");
+app.set("views", "./src/views");
 
 app.get("/", (req, res) => {
-  res.render("homeView", { movies });
-});
-
-app.get("/create", (req, res) => {
-  res.render("createView");
-});
-
-app.get("/search", (req, res) => {
-  res.render("searchView");
-});
-
-app.get("/about", (req, res) => {
-  res.render("aboutView");
+  res.render("homeView", { layout: false });
 });
 
 app.listen(2000, () =>
