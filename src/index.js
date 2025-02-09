@@ -18,7 +18,7 @@ app.set("view engine", "hbs");
 app.set("views", "./src/views");
 
 app.get("/", (req, res) => {
-  res.render("homeView", { layout: false });
+  res.render("homeView");
 });
 
 app.listen(2000, () =>
