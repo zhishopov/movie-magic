@@ -1,5 +1,6 @@
 import express from "express";
 import handlebars from "express-handlebars";
+import homeController from "./controllers/home-controller.js";
 
 // import movies from "../movies.js";
 
@@ -17,13 +18,7 @@ app.engine(
 app.set("view engine", "hbs");
 app.set("views", "./src/views");
 
-app.get("/", (req, res) => {
-  res.render("home");
-});
-
-app.get("/about", (req, res) => {
-  res.render("about");
-});
+app.use(homeController);
 
 app.get("*", (req, res) => {
   res.render("404");
