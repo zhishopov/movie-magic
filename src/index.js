@@ -1,6 +1,6 @@
 import express from "express";
 import handlebars from "express-handlebars";
-import homeController from "./controllers/home-controller.js";
+import routes from "./routes.js";
 
 // import movies from "../movies.js";
 
@@ -18,11 +18,7 @@ app.engine(
 app.set("view engine", "hbs");
 app.set("views", "./src/views");
 
-app.use(homeController);
-
-app.get("*", (req, res) => {
-  res.render("404");
-});
+app.use(routes);
 
 app.listen(2000, () =>
   console.log("Server listening on http://localhost:2000...")
