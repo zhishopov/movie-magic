@@ -6,9 +6,6 @@ import routes from "./routes.js";
 
 const app = express();
 
-app.use("/static", express.static("src/public"));
-app.use(express.urlencoded({ extended: false })); // Teach express to read form data
-
 app.engine(
   "hbs",
   handlebars.engine({
@@ -18,6 +15,9 @@ app.engine(
 
 app.set("view engine", "hbs");
 app.set("views", "./src/views");
+
+app.use("/static", express.static("src/public"));
+app.use(express.urlencoded({ extended: false })); // Teach express to read form data
 
 app.use(routes);
 
