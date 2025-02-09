@@ -2,6 +2,10 @@ import { v4 as uuid } from "uuid";
 import movies from "../movies.js";
 
 export default {
+  getAll() {
+    return movies;
+  },
+
   findMovie(movieId) {
     // TODO: handle logic if there is no movie in colelction
     const movie = movies.find((movie) => movie.id === movieId);
