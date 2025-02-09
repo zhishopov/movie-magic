@@ -21,6 +21,10 @@ app.get("/", (req, res) => {
   res.render("homeView");
 });
 
+app.get("/about", (req, res) => {
+  res.render("aboutView");
+});
+
 app.listen(2000, () =>
   console.log("Server listening on http://localhost:2000...")
 );
