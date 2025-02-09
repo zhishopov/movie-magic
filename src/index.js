@@ -13,12 +13,15 @@ app.engine(
   })
 );
 
+// Express Settings
 app.set("view engine", "hbs");
 app.set("views", "./src/views");
 
+// Middlewares
 app.use("/static", express.static("src/public"));
 app.use(express.urlencoded({ extended: false })); // Teach express to read form data
 
+// Routing
 app.use(routes);
 
 app.listen(2000, () =>
