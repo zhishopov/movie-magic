@@ -7,6 +7,10 @@ movieController.get("/create", (req, res) => {
   res.render("create");
 });
 
+movieController.get("/search", (req, res) => {
+  res.render("search");
+});
+
 movieController.get("/:movieId/details", (req, res) => {
   const movieId = req.params.movieId;
   const movie = movieService.findMovie(movieId);
