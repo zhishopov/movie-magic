@@ -1,6 +1,7 @@
 import express from "express";
 import handlebars from "express-handlebars";
 import routes from "./routes.js";
+import showRatingHelper from "./helpers/rating-helper.js";
 
 // import movies from "../movies.js";
 
@@ -10,6 +11,9 @@ app.engine(
   "hbs",
   handlebars.engine({
     extname: "hbs",
+    helpers: {
+      showRating: showRatingHelper,
+    },
   })
 );
 
