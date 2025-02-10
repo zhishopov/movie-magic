@@ -12,9 +12,13 @@ export default {
     }
 
     if (filter.genre) {
-      result = result.filter((movie) =>
-        movie.genre.toLowerCase().includes(filter.genre.toLowerCase())
+      result = result.filter(
+        (movie) => movie.genre.toLowerCase() === filter.genre
       );
+    }
+
+    if (filter.year) {
+      result = result.filter((movie) => movie.year === filter.year);
     }
 
     return result;
