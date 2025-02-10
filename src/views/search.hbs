@@ -1,9 +1,9 @@
 <section id="search">
   <h1>Search</h1>
-  <form action="" method="" class="form">
+  <form action="/movies/search" method="GET" class="form">
     <input type="text" class="search" name="search" placeholder="Title..." />
-    <input type="text" name="" class="genre" placeholder="Genre..." />
-    <input type="number" name="" class="year" placeholder="Year..." />
+    <input type="text" name="genre" class="genre" placeholder="Genre..." />
+    <input type="number" name="year" class="year" placeholder="Year..." />
     <input type="submit" value="search" />
   </form>
 </section>
@@ -11,7 +11,7 @@
 <section id="catalog">
   <div class="band">
 
-    {{!-- Can further extract to movie-list.hbs --}}
+    {{!-- Can further extract to another partial movie-list.hbs --}}
     {{#each movies}}
       {{>movie}}
     {{else}}
