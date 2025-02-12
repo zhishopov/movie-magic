@@ -21,10 +21,10 @@ movieController.get("/:movieId/details", async (req, res) => {
   res.render("details", { movie });
 });
 
-movieController.post("/create", (req, res) => {
+movieController.post("/create", async (req, res) => {
   const newMovie = req.body;
 
-  movieService.createMovie(newMovie);
+  await movieService.createMovie(newMovie);
 
   res.redirect("/");
 });
