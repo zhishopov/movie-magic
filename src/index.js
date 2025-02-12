@@ -22,7 +22,7 @@ app.set("view engine", "hbs");
 app.set("views", "./src/views");
 
 // Middlewares
-app.use("/static", express.static("src/public"));
+app.use("/static", express.static("src/public")); // Take all static files (styles, images, etc)
 app.use(express.urlencoded({ extended: false })); // Teach express to read form data
 
 // Routing
