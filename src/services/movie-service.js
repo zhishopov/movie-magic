@@ -24,9 +24,9 @@ export default {
     return result;
   },
 
-  findMovie(movieId) {
+  getOne(movieId) {
     // TODO: handle logic if there is no movie in colelction
-    const movie = movies.find((movie) => movie.id === movieId);
+    const movie = Movie.findById(movieId);
     return movie;
   },
 
