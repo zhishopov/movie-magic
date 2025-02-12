@@ -1,10 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
 import handlebars from "express-handlebars";
+
 import routes from "./routes.js";
 import showRatingHelper from "./helpers/rating-helper.js";
-
-// import movies from "../movies.js";
 
 const app = express();
 
