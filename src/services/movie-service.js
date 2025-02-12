@@ -3,25 +3,22 @@ import Movie from "../models/Movie.js";
 
 export default {
   getAll(filter = {}) {
-    let result = Movie.find({});
+    let query = Movie.find({});
 
-    // if (filter.search) {
-    //   result = result.filter((movie) =>
-    //     movie.title.toLowerCase().includes(filter.search.toLowerCase())
-    //   );
-    // }
+    if (filter.search) {
+      // TODO: Fix partial case insensitive search
+      query = query.find({ title: filter.search });
+    }
 
-    // if (filter.genre) {
-    //   result = result.filter(
-    //     (movie) => movie.genre.toLowerCase() === filter.genre
-    //   );
-    // }
+    if (filter.genre) {
+      query = query.find({ genre: filter.genre });
+    }
 
-    // if (filter.year) {
-    //   result = result.filter((movie) => movie.year === filter.year);
-    // }
+    if (filter.year) {
+      query = query.find({ year: Number(filter.year) });
+    }
 
-    return result;
+    return query;
   },
 
   getOne(movieId) {
