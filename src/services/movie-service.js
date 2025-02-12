@@ -3,22 +3,22 @@ import Movie from "../models/Movie.js";
 
 export default {
   getAll(filter = {}) {
-    let query = Movie.find({});
+    let query = {};
 
     if (filter.search) {
       // TODO: Fix partial case insensitive search
-      query = query.find({ title: filter.search });
+      query.title = { $regex: filter.search, $options: "i" };
     }
 
     if (filter.genre) {
-      query = query.find({ genre: filter.genre });
+      query.genre = filter.genre;
     }
 
     if (filter.year) {
-      query = query.find({ year: Number(filter.year) });
+      query.year = Number(filter.year);
     }
 
-    return query;
+    return Movie.find(query);
   },
 
   getOne(movieId) {
