@@ -22,7 +22,7 @@ export default {
 
   getOne(movieId) {
     // TODO: handle logic if there is no movie in colelction
-    const movie = Movie.findById(movieId);
+    const movie = Movie.findById(movieId).populate("casts");
     return movie;
   },
 
