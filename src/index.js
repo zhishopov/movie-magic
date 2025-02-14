@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import handlebars from "express-handlebars";
+import "dotenv/config";
 
 import routes from "./routes.js";
 import showRatingHelper from "./helpers/rating-helper.js";
@@ -9,8 +10,10 @@ const app = express();
 
 // db configuration
 try {
-  const uri = "mongodb://localhost:27017/movie-magic";
-  await mongoose.connect(uri);
+  const defaultUri = "mongodb://localhost:27017/movie-magic";
+
+  // Using env variable
+  await mongoose.connect(process.env.DATABASE_URI ?? defaultUri);
 
   console.log("Connected to DB");
 } catch (error) {

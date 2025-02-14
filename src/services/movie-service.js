@@ -44,6 +44,6 @@ export default {
     // return movie;
 
     // Attach Cast Method #2
-    return Movie.findByIdAndUpdate(movieId, { $push: { casts: castId } });
+    return Movie.findByIdAndUpdate(movieId, { $push: { casts: castId } }); // TODO: Store character name and display it
   },
 };
