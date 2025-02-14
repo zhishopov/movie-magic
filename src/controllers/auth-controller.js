@@ -12,11 +12,7 @@ authController.post("/register", async (req, res) => {
   const userData = req.body;
 
   await authService.register(userData);
-  // const salt = await bcrypt.genSalt(10);
-  // const hash = await bcrypt.hash(password, salt);
 
-  // console.log(salt);
-  // console.log(hash);
   res.redirect("/");
 });
 
