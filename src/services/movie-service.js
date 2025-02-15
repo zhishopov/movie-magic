@@ -41,13 +41,10 @@ export default {
   },
 
   async attachCast(movieId, castId) {
-    // Attach Cast Method #1
-    // const movie = await Movie.findById(movieId);
-    // movie.casts.push(castId);
-    // await movie.save();
-    // return movie;
-
-    // Attach Cast Method #2
     return Movie.findByIdAndUpdate(movieId, { $push: { casts: castId } }); // TODO: Store character name and display it
+  },
+
+  delete(movieId) {
+    return Movie.findByIdAndDelete(movieId);
   },
 };
