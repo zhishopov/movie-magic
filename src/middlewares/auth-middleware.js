@@ -18,6 +18,7 @@ export const authMiddleware = (req, res, next) => {
 
     next();
   } catch (error) {
-    // TODO: Invalid token!
+    res.clearCookie("auth");
+    res.redirect("/auth/login");
   }
 };
