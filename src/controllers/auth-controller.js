@@ -1,5 +1,4 @@
 import { Router } from "express";
-import bcrypt from "bcrypt";
 import authService from "../services/auth-service.js";
 
 const authController = Router();
@@ -24,7 +23,8 @@ authController.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    await authService.login(email, password);
+    const token = await authService.login(email, password);
+    console.log(token);
   } catch (error) {
     console.log(error.message);
     return res.redirect("/404");
