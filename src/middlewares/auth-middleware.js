@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-const SECRET = process.env.JWT_SECRET | "BASICSECRET";
+const SECRET = process.env.JWT_SECRET || "BASICSECRET";
 
 export const authMiddleware = (req, res, next) => {
   // Get token
@@ -20,6 +20,4 @@ export const authMiddleware = (req, res, next) => {
   } catch (error) {
     // TODO: Invalid token!
   }
-
-  next();
 };
