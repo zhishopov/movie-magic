@@ -15,7 +15,7 @@
             class="inputFields"
             id="title"
             name="title"
-            value="The Little Marmaid"
+            value="{{movie.title}}"
           />
         </li>
         <li>
@@ -36,7 +36,7 @@
             class="inputFields"
             id="genre"
             name="genre"
-            value="Fantasy"
+            value="{{movie.genre}}"
           />
         </li>
         <li>
@@ -46,7 +46,7 @@
             class="inputFields"
             id="director"
             name="director"
-            value="Rob Marshall"
+            value="{{movie.director}}"
           />
         </li>
         <li>
@@ -56,7 +56,7 @@
             class="inputFields"
             id="year"
             name="year"
-            value="2023"
+            value="{{movie.year}}"
           />
         </li>
         <li>
@@ -65,8 +65,8 @@
             type="text"
             class="inputFields"
             id="image"
-            name="image"
-            value="https://m.media-amazon.com/images/M/MV5BYTUxYjczMWUtYzlkZC00NTcwLWE3ODQtN2I2YTIxOTU0ZTljXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg"
+            name="imageUrl"
+            value="{{movie.imageUrl}}"
           />
         </li>
         <li>
@@ -76,18 +76,16 @@
             class="inputFields"
             id="rating"
             name="rating"
-            value="4"
+            value="{{movie.rating}}"
           />
         </li>
         <li>
           <label for="description">Description:</label>
-          <textarea id="description" class="inputFields" name="description">The
-            youngest of King Triton's daughters, Ariel is a beautiful and
-            spirited young mermaid with a thirst for adventure. Longing to find
-            out more about the world beyond the sea, Ariel visits the surface
-            and falls for the dashing Prince Eric. Following her heart, she
-            makes a deal with the evil sea witch, Ursula, to experience life on
-            land.</textarea>
+          <textarea
+            id="description"
+            class="inputFields"
+            name="description"
+          >{{movie.description}}</textarea>
         </li>
         <li id="center-btn">
           <button id="edit-btn">Edit</button>
