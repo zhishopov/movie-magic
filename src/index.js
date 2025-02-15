@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import handlebars from "express-handlebars";
+import cookieParser from "cookie-parser";
 import "dotenv/config";
 
 import routes from "./routes.js";
@@ -40,6 +41,7 @@ app.set("views", "./src/views");
 // Middlewares
 app.use("/static", express.static("src/public")); // Take all static files (styles, images, etc)
 app.use(express.urlencoded({ extended: false })); // Teach express to read form data
+app.use(cookieParser());
 
 // Routing
 app.use(routes);
