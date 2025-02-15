@@ -6,6 +6,7 @@ import "dotenv/config";
 
 import routes from "./routes.js";
 import showRatingHelper from "./helpers/rating-helper.js";
+import { authMiddleware } from "./middlewares/auth-middleware.js";
 
 const app = express();
 
@@ -42,6 +43,7 @@ app.set("views", "./src/views");
 app.use("/static", express.static("src/public")); // Take all static files (styles, images, etc)
 app.use(express.urlencoded({ extended: false })); // Teach express to read form data
 app.use(cookieParser());
+app.use(authMiddleware);
 
 // Routing
 app.use(routes);

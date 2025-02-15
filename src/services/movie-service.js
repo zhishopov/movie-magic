@@ -21,9 +21,12 @@ export default {
   },
 
   getOne(movieId) {
-    // TODO: handle logic if there is no movie in colelction
-    const movie = Movie.findById(movieId).populate("casts");
-    return movie;
+    const result = Movie.findById(movieId);
+
+    return result;
+  },
+  getOneWithCasts(movieId) {
+    return this.getOne(movieId).populate("casts");
   },
 
   createMovie(movieData) {
